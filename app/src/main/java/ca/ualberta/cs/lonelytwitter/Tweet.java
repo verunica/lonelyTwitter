@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by romansky on 1/12/16.
  */
-public abstract class Tweet {
+public abstract class Tweet implements Comparable{
     protected Date date;
     protected String message;
 
@@ -18,7 +18,7 @@ public abstract class Tweet {
 
     public Tweet(String message) {
         this.message = message;
-        this.date = new Date();
+        this.date = new Date(System.currentTimeMillis());
     }
 
 
@@ -34,6 +34,7 @@ public abstract class Tweet {
     public Date getDate() {
         return this.date;
     }
+
     public void setDate(Date date) {
         this.date = date;
     }
@@ -42,4 +43,14 @@ public abstract class Tweet {
     public String toString(){
         return date.toString() + " | " + message;
     }
+
+    //got this code from http://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/ on jan 25 2016
+    public int compareTo(Object a){
+        Date compareDate = ((Tweet) a).getDate();
+        long d1 = compareDate.getTime();
+        long d2 = this.getDate().getTime();
+
+        return (int) (d2 - d1);
+    }
+
 }
