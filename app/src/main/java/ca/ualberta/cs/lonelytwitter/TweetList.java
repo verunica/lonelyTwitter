@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Created by verunica on 1/26/16.
+ *
+ * This creates a list of Tweets for storage and later to use in
+ * LonelyTwitterActivity
+ *
+ * @see LonelyTwitterActivity
+ *
  */
 public class TweetList {
     private ArrayList<Tweet> tweets = new ArrayList<Tweet>();

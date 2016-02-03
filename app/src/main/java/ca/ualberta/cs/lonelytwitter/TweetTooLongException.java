@@ -1,7 +1,8 @@
 package ca.ualberta.cs.lonelytwitter;
 
 /**
- * Created by romansky on 1/12/16.
+ * Supposed to check if tweet too long
+ * @deprecated
  */
 public class TweetTooLongException extends Exception {
 }
